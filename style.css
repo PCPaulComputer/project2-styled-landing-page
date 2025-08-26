@@ -2,31 +2,59 @@
 
 :root {
     --nav-color: #333;
-    --nav-text: #000;
-    --primary-color: #00f;
+    --nav-text: black;
+    --primary-color: blue;
     --secondary-color: #ecece5;
     --hover-color: #a9970e;
 }
 
 body {
-    font-family: 'Montserrat', 'Merriweather Sans', sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
-.main-description p, .about-content p, 
-.about-stats div p  {
-    color: #393939;
+.main-description{
+    margin-bottom: 10px;
 }
+
+.main-description p {
+    align-items: center;
+    width: 90%;
+}
+
+     
+.main-description p, 
+.about-stats div p  {
+    color: rgb(39, 39, 39);
+}
+
+ .about-content p {
+    color: rgb(39, 39, 39);
+        width: 80%;
+        align-items: center;
+        margin: 10px auto;
+ }
+
+ .about-milestones div h1 {
+    color: var(--primary-color);
+    text-align: center;
+ }
+
 
 .main-description h1 {
-    font-size: 2em;
+    font-size: 2.5em;
+    font-weight: bolder;
 }
 
-
+#features h2, .about-content h2 {
+    font-weight: bolder;
+    margin-top: 20px;
+    padding-top: 20px;
+}
 
 .container .navbar ul li {
     padding: 10px;
-    margin: 0 10px;
-
+    margin: 0 5px;
+    display: inline;
 }
 
 footer {
@@ -45,6 +73,9 @@ footer {
 
 #features, footer {
     margin: 0;
+}
+
+footer {
     padding: 20px;
 }
 
@@ -65,16 +96,8 @@ nav ul li a {
     font-weight: bolder;
 }
 
-.hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-around;
-}
-
-#about {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    align-items: center;
+.team-image, .about-stats{
+    margin-bottom: 20px;
 }
 
 .nav-footer a, .contact-info {
@@ -87,9 +110,7 @@ nav ul li a {
 }
 
 .about-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    padding-bottom: 20px;
 }
 
 .about-stats div, #copy, h2 {
@@ -99,6 +120,7 @@ nav ul li a {
 .about-stats div h1 {
     color: blue;
     font-weight: bold;
+    margin-top: 20px;
 }
 
 .features-card {
@@ -138,7 +160,7 @@ nav ul li a {
     height: 100%;
     margin: 0;
     border-bottom: 2px solid #b0adad;
-    padding: 10px;
+    padding-bottom: 10px;
 }
 
 .navbar nav ul {
@@ -154,34 +176,43 @@ nav ul li a {
     height: auto;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-          /* CSS rules for tablets in portrait or landscape */
-          .navbar {
-            display: inline;
-            margin: 0 auto;
-            text-align: center;
-          }
 
-          #get-started, #learn-more  {
-              margin: 20px auto;
-          }
-        }
-
-@media only screen and (max-width: 767px) {
-    #about, #features, #footer, #home {
-        display: block;
-        width: 100%;
-        margin: 0 10px;
-    }
-    .main-description, .main-image img, 
-    .features-card, .footer-info, #team, .team-image, .main-image,
-    #hero-image, .about-content, .about-stats {
-        display: block;
-        width: fit-content;
-        margin: 0 auto;
-
-    }
+#get-started {
+    background-color: #00f;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 120px;
 }
+
+#learn-more {
+    background-color: #fff;
+    border-color: #00f;
+    padding: 10px;
+    border-radius: 5px;
+    width: 120px;
+}
+
+.container {
+    margin: 0;
+}
+
+#features {
+    background-color: #eeeee8;
+    margin: 0;
+}
+
+.features-card {
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin: 20px;
+}
+
+.features-card h3{
+    font-size: 50px;
+}
+
 .navbar a {
     color: var(--nav-text);
     font-weight: bold;
@@ -193,6 +224,121 @@ nav ul li a {
 
 .container .navbar {
     justify-content: space-between;
+}
+
+/*media queries for mobile, tablet, laptop and desktop*/
+@media screen and (min-width: 1024px) {
+    /* CSS rules for desktops */
+    #hero {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-around;
+    }
+
+    .about-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+     .about-milestones {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+    }
+
+
+    #about {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+          /* CSS rules for tablets in portrait or landscape */
+          .navbar {
+            display: inline;
+            margin: 0 auto;
+            text-align: center;
+          }
+
+          #get-started, #learn-more  {
+              margin: 20px auto;
+          }
+
+          .about-stats {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .about-milestones {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+
+           .call-to-action{
+                text-align: center;
+                margin: 10px auto;
+                width: 100%;
+            }
+
+            .main-image {
+                margin: 10px auto;
+            }
+        }
+
+@media only screen and (max-width: 767px) {
+    /*CSS Rules for mobile devices */
+    #about,  #home {
+        display: block;
+        width: 100%;
+        margin: 0 10px;
+    }
+
+    #features, #footer{
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+
+    .about-stats{
+        padding: 15px;
+    }
+
+     .about-milestones {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 10px
+    }
+
+
+    .call-to-action{
+        text-align: center;
+        margin: 10px auto;
+        width: 100%;
+    }
+
+
+
+    .main-description, .main-image img, 
+    .features-card, .footer-info, #team, .team-image, .main-image,
+    #hero-image, .about-content, .about-stats {
+        display: block;
+        width: fit-content;
+        margin: 10px auto;
+
+    }
+    #features {
+        padding: 0;
+    }
 }
 
 @media screen and (max-width: 991px) {
@@ -215,39 +361,4 @@ nav ul li a {
         display: inline;
     }
 
-}
-
-#get-started {
-    background-color: #00f;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-#learn-more {
-    background-color: #fff;
-    border-color: #00f;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.container {
-    margin: 0;
-}
-
-#features {
-    background-color: #eeeee8;
-    margin: 0;
-    padding: 20px;
-}
-
-.features-card {
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    margin: 20px;
-}
-
-.features-card h3{
-    font-size: 50px;
 }
